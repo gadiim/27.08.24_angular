@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    padding: 20px;
+}
+
+button {
+    margin-right: 5px;
+    padding: 0 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: gainsboro;
+}
+
+button:hover {
+    background-color: darkgrey;
+}
+
+button.active {
+    border: gainsboro;
+}
+
+tr td:first-child {
+    color: grey;
+}
+
+tr td:last-child {
+    padding: 0 15px;
+    background-color: gainsboro;
+    border-radius: 5px;
+}
+
+.display {
+    width: auto;
+    height: 50px;
+    margin: 0 20px 20px 20px;
+    padding: 10px;
+    /* background-color: lightgrey; */
+    box-shadow: 0 0 10px gainsboro;
+    border-radius: 5px;
+    overflow: visible;
+}

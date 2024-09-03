@@ -1,0 +1,70 @@
+<div class="container">
+    <table>
+        <tbody>
+            <tr>
+                <td>name:</td>
+                <td>{{ name }} {{ surname }}</td>
+            </tr>
+            <tr>
+                <td>phone:</td>
+                <td>{{ phone }}</td>
+            </tr>
+            <tr>
+                <td>email:</td>
+                <td>{{ email }}</td>
+            </tr>
+            <tr>
+                <td>residence:</td>
+                <td>{{ residence }}</td>
+            </tr>
+            <tr>
+                <td>experience:</td>
+                <td>{{ experience }}</td>
+            </tr>
+            <tr>
+                <td>skills:</td>
+                <td style="display: flex;">
+                    <div *ngIf="skills.includes('Combat')">
+                        <button (click)="showCombat()"
+                            [ngClass]="{'active': selectedObject === 'combat'}">Combat</button>
+                    </div>
+                    <div *ngIf="skills.includes('Stealth')">
+                        <button (click)="showStealth()"
+                            [ngClass]="{'active': selectedObject === 'stealth'}">Stealth</button>
+                    </div>
+                    <div *ngIf="skills.includes('Strategy')">
+                        <button (click)="showStrategy()"
+                            [ngClass]="{'active': selectedObject === 'strategy'}">Strategy</button>
+                    </div>
+                    <div *ngIf="skills.includes('Negotiation')">
+                        <button (click)="showNegotiation()"
+                            [ngClass]="{'active': selectedObject === 'negotiation'}">Negotiation</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="display">
+        <div *ngIf="selectedObject === 'combat'">
+            <li>The ability to engage effectively in lihysical confrontations, whether using firearms, melee wealions,
+                or hand-to-hand combat. It involves not only strength and wealion liroficiency but also tactical
+                awareness, quick reflexes, and adalitability in various battle scenarios.</li>
+        </div>
+        <div *ngIf="selectedObject === 'stealth'">
+            <li>The skill of moving silently and unseen, avoiding detection by enemies or targets. It involves careful
+                planning, patience, and the ability to blend into surroundings or use cover to your advantage, often for
+                the purpose of gathering intelligence, avoiding conflict, or striking from the shadows.</li>
+        </div>
+        <div *ngIf="selectedObject === 'strategy'">
+            <li>The capability to devise and execute long-term plans to achieve specific goals, particularly in combat
+                or mission-based situations. This involves analyzing situations, predicting outcomes, and making
+                decisions that maximize success while minimizing risk.</li>
+        </div>
+        <div *ngIf="selectedObject === 'negotiation'">
+            <li>The art of communicating and bargaining with others to reach favorable agreements or outcomes. It
+                involves persuasion, understanding the motivations of others, and finding common ground, often in tense
+                or high-stakes situations.</li>
+        </div>
+    </div>
+</div>
