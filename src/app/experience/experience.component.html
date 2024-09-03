@@ -1,0 +1,94 @@
+<div class="container">
+    <table>
+        <tbody>
+            <tr>
+                <td>name:</td>
+                <td>{{ name }} {{ surname }}</td>
+            </tr>
+            <tr>
+                <td>phone:</td>
+                <td>{{ phone }}</td>
+            </tr>
+            <tr>
+                <td>email:</td>
+                <td>{{ email }}</td>
+            </tr>
+            <tr>
+                <td>residence:</td>
+                <td>{{ residence }}</td>
+            </tr>
+            <tr>
+                <td>experience:</td>
+                <td style="display: flex;">
+                    <div *ngIf="experience.includes('Mercenary')">
+                        <button (click)="showMercenary()"
+                            [ngClass]="{'active': selectedExperience === 'mercenary'}">Mercenary</button>
+                    </div>
+                    <div *ngIf="experience.includes('Assassin')">
+                        <button (click)="showAssassin()"
+                            [ngClass]="{'active': selectedExperience === 'assassin'}">Assassin</button>
+                    </div>
+                    <div *ngIf="experience.includes('Former Institute Operative')">
+                        <button (click)="showFormerInstituteOperative()"
+                            [ngClass]="{'active': selectedExperience === 'formerInstituteOperative'}">Former Institute Operative</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>skills:</td>
+                <td style="display: flex;">
+                    <div *ngIf="skills.includes('Combat')">
+                        <button (click)="showCombat()"
+                            [ngClass]="{'active': selectedSkills === 'combat'}">Combat</button>
+                    </div>
+                    <div *ngIf="skills.includes('Stealth')">
+                        <button (click)="showStealth()"
+                            [ngClass]="{'active': selectedSkills === 'stealth'}">Stealth</button>
+                    </div>
+                    <div *ngIf="skills.includes('Strategy')">
+                        <button (click)="showStrategy()"
+                            [ngClass]="{'active': selectedSkills === 'strategy'}">Strategy</button>
+                    </div>
+                    <div *ngIf="skills.includes('Negotiation')">
+                        <button (click)="showNegotiation()"
+                            [ngClass]="{'active': selectedSkills === 'negotiation'}">Negotiation</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="display">
+        <div *ngIf="selectedExperience === 'mercenary'">
+            <li>A professional soldier or fighter who is hired to undertake combat missions or other dangerous tasks for payment. Mercenaries operate independently of any allegiance to a specific cause or faction, focusing on the completion of the job and the rewards that come with it. This role requires versatility, resourcefulness, and the ability to adapt to various combat situations and clients.</li>
+        </div>
+        <div *ngIf="selectedExperience === 'assassin'">
+            <li>A skilled individual who specializes in eliminating specific targets, often through stealth and precision. Assassins are trained to carry out covert operations, focusing on efficiency and minimizing collateral damage. The role demands expertise in silent killing techniques, infiltration, and evasion, often requiring a cold and calculated mindset.</li>
+        </div>
+        <div *ngIf="selectedExperience === 'formerInstituteOperative'">
+            <li>A previous agent or operative of the Institute, an advanced and secretive organization in the Fallout universe. This experience involves conducting covert missions for the Institute, often related to technology acquisition, intelligence gathering, or enforcing the organization's interests. Being a former operative implies deep knowledge of the Institute's methods, technology, and objectives, along with the skills needed to carry out their often morally ambiguous tasks.</li>
+        </div>
+        
+        <div *ngIf="selectedSkills === 'combat'">
+            <li>The ability to engage effectively in lihysical confrontations, whether using firearms, melee wealions,
+                or hand-to-hand combat. It involves not only strength and wealion liroficiency but also tactical
+                awareness, quick reflexes, and adalitability in various battle scenarios.</li>
+        </div>
+        <div *ngIf="selectedSkills === 'stealth'">
+            <li>The skill of moving silently and unseen, avoiding detection by enemies or targets. It involves careful
+                planning, patience, and the ability to blend into surroundings or use cover to your advantage, often for
+                the purpose of gathering intelligence, avoiding conflict, or striking from the shadows.</li>
+        </div>
+        <div *ngIf="selectedSkills === 'strategy'">
+            <li>The capability to devise and execute long-term plans to achieve specific goals, particularly in combat
+                or mission-based situations. This involves analyzing situations, predicting outcomes, and making
+                decisions that maximize success while minimizing risk.</li>
+        </div>
+        <div *ngIf="selectedSkills === 'negotiation'">
+            <li>The art of communicating and bargaining with others to reach favorable agreements or outcomes. It
+                involves persuasion, understanding the motivations of others, and finding common ground, often in tense
+                or high-stakes situations.</li>
+        </div>
+
+    </div>
+</div>

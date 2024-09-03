@@ -6,3 +6,11 @@
     </app-skills>
   </div>
 </fieldset>
+<fieldset>
+  <legend>TASK 2</legend>
+  <div *ngFor="let item of cv">
+    <app-experience [name]="item.name" [surname]="item.surname" [phone]="item.phone" [email]="item.email"
+      [residence]="item.residence" [experience]="item.experience" [skills]="item.skills">
+    </app-experience>
+  </div>
+</fieldset>

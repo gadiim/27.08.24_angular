@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SkillsComponent } from './skills/skills.component';
+import { ExperienceComponent } from './experience/experience.component';
 import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgFor, SkillsComponent ],
+  imports: [RouterOutlet, NgFor, SkillsComponent, ExperienceComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = '27.08.24_ngModel';
   cv = [
     {
       name: 'Conrad',
@@ -22,4 +22,5 @@ export class AppComponent {
       experience: 'Mercenary, Assassin, Former Institute Operative',
       skills: 'Combat, Stealth, Strategy, Negotiation',
     }]
+    
 }
